@@ -1,3 +1,46 @@
+body {
+  font-family: sans-serif;
+  padding-left: 20px;
+}
+
+h1 {
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+form {
+  padding:0px;
+  margin:0px;
+}
+
+
+#thresholdValue, #fontSizeValue {
+  padding-left: 10px;
+}
+
+#threshold, #fontSize {
+  width: 280px;
+}
+
+fieldset {
+  width: 400px;
+  display: block;
+  border: 0px solid #000;
+  margin-bottom: 25px;
+  padding:0;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  padding-bottom: 7px
+}
+
+#fontFamily {
+  padding: 5px;
+  font-size: 16px;
+  width: 300px;
+}
+
 #preview {
   overflow: visible;
   height: auto;
@@ -5,6 +48,7 @@
   padding: 5px;
   width: 400px;
   border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 #preview:before,
@@ -17,10 +61,24 @@
   clear: both;
 }
 
-
 img {
   padding:0 1px;
   margin:0;
   position: relative;
   float: left;
+}
+
+#link {
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #00987C;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#link:hover {
+  background-color: #007461;
+  transition: background-color .5s;
 }
