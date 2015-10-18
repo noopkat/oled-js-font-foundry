@@ -8,6 +8,15 @@
 <body>
   <h1>OLED-js Font Foundry</h1>
 
+  <h2>Instructions for use:</h2>
+  <ul>
+    <li>Type in your chosen font name. <strong>Must be a monospaced font.</strong></li>
+    <li>Choose a font size using the slider.</li>
+    <li>Choose a threshold amount. This affects the sampling process when the font is converted to monochrome.</li>
+    <li>Once you are happy with your font, click 'Download font file' and save the output as a .js (JavaScript) file.</li>
+    <li>Require this file as you normally would when using fonts with oled-js.</li>
+  </ul>
+
   <form>
     <fieldset>
       <label>Font Family</label>
@@ -21,7 +30,7 @@
 
     <fieldset>
       <label>Threshold</label>
-      <input id="threshold" type="range" min="0" max="255"/><span id="thresholdValue">0</span>
+      <input id="threshold" type="range" min="0" max="230" value="150"/><span id="thresholdValue">0</span>
     </fieldset>
 
   </form>
