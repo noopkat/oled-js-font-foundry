@@ -23,4 +23,4 @@ $('form').on('submit', function() {
 $threshold.change();
 $fontSize.change();
 
-createPreview($('#threshold').val(), $('#fontFamily').val(), $('#fontSize').val());
+createPreview($threshold.val(), $fontFamily.val(), $fontSize.val());
