@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>hi</title>
+  <link href="css/main.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+  <h3>hi</h3>
+
+  <form>
+    <fieldset>
+      <label>Font Family</label>
+      <input id="fontFamily" type="input" value="Monaco"/>
+    </fieldset>
+
+    <fieldset>
+      <label>Font Size</label>
+      <input id="fontSize" type="range" min="5" max="72" value="22"/><span id="fontSizeValue">0</span>
+    </fieldset>
+
+    <fieldset>
+      <label>Threshold</label>
+      <input id="threshold" type="range" min="0" max="255"/><span id="thresholdValue">0</span>
+    </fieldset>
+
+  </form>
+
+  <div id="preview"></div>
+  <a id="link" href="">Download font file</a>
+  <canvas id="textCanvas" style="display:none"></canvas>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="js/get-text-height.js"></script>
+  <script src="js/create-preview.js"></script>
+  <script src="js/oled-font-foundry.js"></script>
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
