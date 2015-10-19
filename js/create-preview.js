@@ -7,6 +7,11 @@ var chars = [' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-
    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}'
 ];
 
+tCtx.imageSmoothingEnabled = false;
+tCtx.mozImageSmoothingEnabled = false;
+tCtx.webkitImageSmoothingEnabled = false;
+tCtx.translate(0.5, 0.5);
+
 function createPreview(threshold, ff, fs) {
   //console.log(threshold, ff, fs);
 
