@@ -21,12 +21,12 @@ function createPreview(threshold, ff, fs) {
   for (var i = 0; i < chars.length; i++) {
 
     var charHeight = getTextHeight(ff, fs);
-    tCtx.font = fs + "px " + ff;
+    tCtx.font = fs + "px " + ff + ', monospace';
     tCtx.canvas.width = tCtx.measureText(chars[i]).width;
     tCtx.canvas.height = charHeight.height;
     tCtx.fillStyle = "black";
     tCtx.fillRect(0, 0, tCtx.canvas.width, tCtx.canvas.height);
-    tCtx.font = fs + "px " + ff;
+    tCtx.font = fs + "px " + ff + ', monospace';
     tCtx.fillStyle = "white";
     tCtx.fillText(chars[i], 0, charHeight.ascent);
 
