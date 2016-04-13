@@ -6,6 +6,7 @@ var chars = [' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-
    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}'
 ];
+var bloburl;
 
 tCtx.imageSmoothingEnabled = false;
 tCtx.mozImageSmoothingEnabled = false;
@@ -101,5 +102,19 @@ function createPreview(threshold, ff, fs) {
   }
 
   var code = "module.exports = {\nmonospace: true,\nwidth: "+tCtx.canvas.width+",\nheight: "+ tCtx.canvas.height +",\nfontData: ["+ wholeFont.toString(16) +"],\nlookup: "+ JSON.stringify(chars) +"\n};";
-  link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(code);
+
+  // if Blob constructor is available, create objectURL instead of dataURL
+  if (window.Blob) {
+    var blob = new Blob([code], {type: 'text/javascript'});
+    // if bloburl was previousely created, revoke it first for memory
+    if (bloburl) {
+      window.URL.revokeObjectURL(bloburl);
+    }
+    bloburl = window.URL.createObjectURL(blob);
+    link.href = bloburl;
+    link.download = 'oled-js-font.js';
+
+    return;
+  }
+  link.href = 'data:text/text;charset=utf-8,' + encodeURIComponent(code);
 }
