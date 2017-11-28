@@ -1,4 +1,4 @@
 # oled-js-font-foundry
-Website to help create fonts for use with [oled-js]()
+Website to help create fonts for use with [oled-js](https://github.com/noopkat/oled-js)
 
 Go to http://noopkat.github.io/oled-js-font-foundry and make some font JSON :books: 
