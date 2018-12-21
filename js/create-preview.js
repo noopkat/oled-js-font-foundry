@@ -46,7 +46,7 @@ function createPreview(threshold, ff, fs) {
         depth = 4;
 
     // create a new buffer that will be filled with pixel bytes (8 bits per) and then returned
-    var buffer = new Uint8ClampedArray(Math.ceil((width * height) / 8));
+    var buffer = new Uint8ClampedArray(width * Math.ceil(height / 8));
 
     // filter pixels to create monochrome image data
     for (var j = 0; j < pixelsLen; j += depth) {
