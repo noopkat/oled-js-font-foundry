@@ -2,9 +2,9 @@ var tCtx = document.getElementById('textCanvas').getContext('2d');
 var chars = [' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',
    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@',
    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
-   'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`',
+   'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ä', 'Ö', 'Ü', '[', '\\', ']', '^', '_', '`',
    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
-   'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}'
+   'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ä', 'ö', 'ü', 'ß', '{', '|', '}'
 ];
 var bloburl;
 
@@ -46,7 +46,7 @@ function createPreview(threshold, ff, fs) {
         depth = 4;
 
     // create a new buffer that will be filled with pixel bytes (8 bits per) and then returned
-    var buffer = new Uint8ClampedArray(Math.ceil((width * height) / 8));
+    var buffer = new Uint8ClampedArray(width * Math.ceil(height / 8));
 
     // filter pixels to create monochrome image data
     for (var j = 0; j < pixelsLen; j += depth) {
